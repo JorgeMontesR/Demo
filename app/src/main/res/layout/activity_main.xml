@@ -5,29 +5,43 @@
     android:id="@+id/botonizq"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+    >
 
     <Button
         android:id="@+id/btnizq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:onClick="buttonclick"
-        android:text="left button" />
+        android:text="left button"
+        />
 
     <Button
         android:id="@+id/btnder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:onClick="buttonclick"
         android:text="Right button"
-        android:onClick="buttonclick"/>
+        />
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/txtResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Result"
-        android:textSize="34sp" />
+        android:textSize="34sp"
+        android:layout_gravity="center"
+
+        />
+
 </LinearLayout>
