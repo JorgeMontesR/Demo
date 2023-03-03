@@ -5,15 +5,16 @@
     android:id="@+id/botonizq"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/btnizq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="left button"
-        android:onClick="leftclick"/>
+        android:onClick="buttonclick"
+        android:text="left button" />
 
     <Button
         android:id="@+id/btnder"
@@ -21,5 +22,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Right button"
-        android:onClick="rightclick"/>
+        android:onClick="buttonclick"/>
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textSize="34sp" />
 </LinearLayout>

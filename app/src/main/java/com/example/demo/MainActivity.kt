@@ -3,6 +3,7 @@ package com.example.demo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -11,8 +12,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    var leftnumber= (0 ..100).random()
-    var rightnumber= (0+Math.random()*100).toInt()
+    var leftnumber= 0
+    var rightnumber= 0
+
+    fun assignNumbers(){
+        leftnumber= (0 ..100).random()
+        rightnumber= (0+Math.random()*100).toInt()
+    }
+
+    fun buttonclick(button: View){
+        println("El Numero derecho es: $rightnumber y el izquierdo es $leftnumber")
+        println (" El usuario dio click en el boton ${button.id}")
+        val result = findViewById <TextView> (R.id.txtResult)
+        if(button.id == R.id.btnder && rightnumber>leftnumber){
+            Toast.makeText(this, "Ganaste!", Toast.LENGTH_LONG).show()
+            result.text = "Has ganado bien hecho"
+        }
+        else  if(button.id == R.id.btnizq && rightnumber<leftnumber){
+            Toast.makeText(this, "Ganaste!", Toast.LENGTH_LONG).show()
+            result.text = "Has ganado bien hecho"
+        }
+        else {
+            Toast.makeText(this, "Perdiste!", Toast.LENGTH_LONG).show()
+            result.text = "Has Perdido :CC"
+        }
+        assignNumbers()
+    }
 
     fun rightclick(param1: View) {
         println("Di click en el boton derecho :D")
@@ -22,10 +47,7 @@ class MainActivity : AppCompatActivity() {
         else {
             Toast.makeText(this, "Perdiste!", Toast.LENGTH_LONG).show()
         }
-        leftnumber= (0 ..100).random()
-        rightnumber= (0+Math.random()*100).toInt()
-
-
+       assignNumbers()
     }
 
     fun leftclick(param1: View) {
@@ -36,8 +58,6 @@ class MainActivity : AppCompatActivity() {
         else {
             Toast.makeText(this, "Perdiste", Toast.LENGTH_LONG).show()
         }
-        leftnumber= (0 ..100).random()
-        rightnumber= (0+Math.random()*100).toInt()
-
+        assignNumbers()
     }
 }
